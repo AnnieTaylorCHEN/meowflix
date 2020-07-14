@@ -1,0 +1,1 @@
+<p>Single Product component</p>
