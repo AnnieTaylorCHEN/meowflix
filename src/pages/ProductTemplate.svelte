@@ -1,1 +1,6 @@
-<h1>Template for product</h1>
+<script>
+export let id;
+export let location;
+</script>
+
+<p>product template page: {id} </p>

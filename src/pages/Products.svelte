@@ -4,4 +4,4 @@
 
 <h1>Products</h1>
 
-<Products />
+<Products title="Browse your favorite movies" />

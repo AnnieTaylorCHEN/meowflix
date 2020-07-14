@@ -1,6 +1,7 @@
 <script>
   import Hero from "../components/Hero.svelte";
   import { link } from "svelte-routing";
+  import Featured from "../components/Products/Featured.svelte";
 </script>
 
 <style>
@@ -14,3 +15,5 @@
     <a href="/products" class="button" use:link>Browse Now</a>
   </div>
 </Hero>
+
+<Featured title="Featured" />

@@ -12,5 +12,6 @@ const flattenProducts = (data) => {
 };
 
 const store = writable(flattenProducts([...localProducts]));
+// const store = writable(flattenProducts([]));
 
 export default store;
