@@ -1,8 +1,10 @@
 <script>
   export let location;
-  import Hero from "../components/Hero.svelte";
+  
   import { link } from "svelte-routing";
+  import Hero from "../components/Hero.svelte";
   import Featured from "../components/Products/Featured.svelte";
+  import products, { featuredStore } from "../stores/defaultProducts";
 </script>
 
 <style>
@@ -17,4 +19,4 @@
   </div>
 </Hero>
 
-<Featured title="Featured" />
+<Featured title="Featured" filteredProducts={featuredStore}/>
