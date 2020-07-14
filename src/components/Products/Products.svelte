@@ -7,7 +7,7 @@
 
 <style>
   .section {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
   }
 
@@ -21,7 +21,7 @@
   }
 
   .loader {
-      grid-column: span 4;
+    grid-column: span 4;
   }
 </style>
 

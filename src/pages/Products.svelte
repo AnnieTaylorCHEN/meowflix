@@ -1,7 +1,8 @@
 <script>
+  export let location;
   import Products from "../components/Products/Products.svelte";
 </script>
 
-<h1>Products</h1>
-
-<Products title="Browse your favorite movies" />
+<div>
+  <Products title="Browse your favorite movies" />
+</div>

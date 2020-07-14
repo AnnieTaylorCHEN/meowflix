@@ -83,6 +83,7 @@ body {
     font-family: 'Quicksand', Helvetica, sans-serif;
     font-size: 16px;
     margin: 0 auto;
+    background-color: black;
 }
 
 h1, h2, h3 {
@@ -150,40 +151,6 @@ a:active{
 
 .button--danger:hover{
     background-color: red!important;
-}
-
-.product-buttons{
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 1rem;
-}
-
-/*header*/
-
-.logo{
-    display: flex;
-    flex-direction: row;
-}
-
-.logo img{
-    width: 40px;
-    height: 40px;
-    padding-right: 1rem;
-}
-
-header{
-    margin-top: 1rem;
-    margin-bottom: 3rem;
-}
-
-nav {
-    margin-top: 1rem;
-}
-
-nav a{
-     color: var(--dark-blue)!important;
-     margin-right: 1rem;
-     text-decoration: none;
 }
 
 /*footer*/
