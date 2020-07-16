@@ -7,6 +7,7 @@
   import ProductTemplate from "./pages/ProductTemplate.svelte";
   import Navbar from "./components/Navbar/Navbar.svelte";
   import Sidebar from "./components/Navbar/Sidebar.svelte";
+  import Cart from "./components/Cart/Cart.svelte";
 
   import { Router, Route, Link } from "svelte-routing";
 
@@ -17,6 +18,9 @@
   <Navbar />
   {#if $globalStore.sidebar}
     <Sidebar />
+  {/if}
+  {#if $globalStore.cart}
+    <Cart />
   {/if}
   <Route path="/" component={Home} />
   <Route path="/about" component={About} />

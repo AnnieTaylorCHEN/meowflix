@@ -1,6 +1,9 @@
 <script>
   import { link } from "svelte-routing";
+
   import { links } from "../../constants/links";
+
+  import CartButton from "../Cart/CartButton.svelte";
 </script>
 
 <style>
@@ -51,8 +54,6 @@
   </div>
  
   <div class="menu-container">
-    <div>
-      <img src="/assets/images/liked.svg" alt="liked list of products" />
-    </div>
+    <CartButton />
   </div>
 </nav>

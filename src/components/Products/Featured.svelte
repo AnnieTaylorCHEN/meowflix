@@ -1,7 +1,6 @@
 <script>
   export let title = "";
   export let filteredProducts = [];
-  // import products, { featuredStore, randomStore } from "../../stores/defaultProducts";
   import Product from "./Product.svelte";
   import Loading from "../Loading.svelte";
 </script>

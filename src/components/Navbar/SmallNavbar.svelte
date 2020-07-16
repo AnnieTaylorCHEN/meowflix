@@ -1,6 +1,9 @@
 <script>
   import { link } from "svelte-routing";
+
   import globalStore from "../../stores/globalStore";
+
+  import CartButton from "../Cart/CartButton.svelte";
   let openSidebar = globalStore.toggleItem;
 </script>
 
@@ -38,9 +41,7 @@
     <h1>Meowflix</h1>
   </a>
   <div class="menu-container">
-    <div>
-      <img src="/assets/images/liked.svg" alt="liked list of products" />
-    </div>
+    <CartButton />
     <div>
       <img
         src="/assets/images/menu.svg"

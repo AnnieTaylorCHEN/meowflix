@@ -43,7 +43,7 @@
 </style>
 
 <div class="sidebar-container" transition:fly={{ x: -1000 }}>
-  <div class="sidebar" transition:fade={{ delay: 400 }}>
+  <div class="sidebar" transition:fade={{ delay: 100 }}>
     <a
       href="/"
       use:link

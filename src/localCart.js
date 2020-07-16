@@ -19,5 +19,19 @@ export default [
     price: 7.99,
     image: "/assets/product-images/product-3.png",
     amount: 1
+  },
+  {
+    id: 5,
+    title: "Barber Razor",
+    price: 7.99,
+    image: "/assets/product-images/product-5.png",
+    amount: 1
+  },
+  {
+    id: 7,
+    title: "Barber Razor",
+    price: 7.99,
+    image: "/assets/product-images/product-7.png",
+    amount: 1
   }
 ];
