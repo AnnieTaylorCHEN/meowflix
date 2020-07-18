@@ -3,6 +3,8 @@
   import { link } from "svelte-routing";
   import globalStore from "../../stores/globalStore";
   import { fly, fade } from "svelte/transition";
+
+  import LoginLink from "../LoginLink.svelte";
 </script>
 
 <style>
@@ -62,6 +64,7 @@
         {sidelink.text}
       </a>
     {/each}
+    <LoginLink />
     <button
       on:click={() => {
         globalStore.toggleItem('sidebar', false);

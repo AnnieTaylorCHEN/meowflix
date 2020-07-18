@@ -6,7 +6,7 @@
 
   import ItemsList from "./ItemsList.svelte";
 
-  let user = false;
+  import user from "../../stores/user";
 </script>
 
 <style>
@@ -114,7 +114,7 @@
         </span>
         <span class="cart-total__num">{$cartTotal}</span>
       </div>
-      {#if user}
+      {#if $user.jwt}
         <a
           href="/checkout"
           use:link

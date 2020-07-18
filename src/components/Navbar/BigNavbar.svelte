@@ -4,6 +4,7 @@
   import { links } from "../../constants/links";
 
   import CartButton from "../Cart/CartButton.svelte";
+  import LoginLink from "../LoginLink.svelte";
 </script>
 
 <style>
@@ -38,10 +39,10 @@
   }
 </style>
 
- <div>
-    <a href="/" use:link>
-      <h1>Meowflix</h1>
-    </a>
+<div>
+  <a href="/" use:link>
+    <h1>Meowflix</h1>
+  </a>
 </div>
 
 <nav>
@@ -52,8 +53,9 @@
       </div>
     {/each}
   </div>
- 
+
   <div class="menu-container">
+    <LoginLink />
     <CartButton />
   </div>
 </nav>
