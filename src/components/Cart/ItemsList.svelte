@@ -1,8 +1,14 @@
 <script>
-  import Item from "./Item.svelte";
-  import cart from "../../stores/cart";
+  import { afterUpdate } from "svelte";
   import { fly } from "svelte/transition";
   import { flip } from "svelte/animate";
+
+  import Item from "./Item.svelte";
+  import cart, { setLocalStorageCart } from "../../stores/cart";
+
+  afterUpdate(() => {
+    setLocalStorageCart($cart);
+  });
 </script>
 
 <style>
@@ -26,11 +32,15 @@
     color: var(--red);
   }
 
+  img {
+    width: 50%;
+  }
+
   @media (max-width: 1500px) {
     .cart-items {
       width: 60vw;
     }
-  } 
+  }
 
   @media (max-width: 900px) {
     .cart-items {
@@ -42,12 +52,18 @@
 <section class="cart-items">
   <article>
     {#each $cart as cartItem, index (cartItem.id)}
-      <div in:fly={{ delay: (index + 1) * 150, x: 100 }} out:fly={{ x: -100 }} animate:flip >
+      <div
+        in:fly={{ delay: (index + 1) * 150, x: 100 }}
+        out:fly={{ x: -100 }}
+        animate:flip>
         <Item {...cartItem} />
-      </div>  
+      </div>
     {:else}
+      <img
+        src="/assets/images/empty-cart.png"
+        alt="sad grumpy cat when cart is empty" />
       <h3>Your cart is currently empty!</h3>
     {/each}
   </article>
-  
+
 </section>

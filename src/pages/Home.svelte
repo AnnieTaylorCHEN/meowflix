@@ -3,6 +3,7 @@
   
   import { link } from "svelte-routing";
   import Hero from "../components/Hero.svelte";
+  import Watch from "../components/Home/Watch.svelte";
   import Featured from "../components/Products/Featured.svelte";
   import products, { featuredStore } from "../stores/defaultProducts";
 </script>
@@ -18,5 +19,7 @@
     <a href="/products" class="button" use:link>Browse Now</a>
   </div>
 </Hero>
+
+<Watch />
 
 <Featured title="Featured" filteredProducts={featuredStore}/>

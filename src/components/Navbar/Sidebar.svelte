@@ -30,7 +30,7 @@
   button {
     background: transparent;
     font-size: 3rem;
-    color: red;
+    color:var(--red);
     border: none;
     outline: none;
   }

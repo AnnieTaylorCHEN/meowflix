@@ -2,14 +2,18 @@
   export let id;
   export let location;
 
-  import products, {randomStore} from "../stores/defaultProducts";
+  import { link } from "svelte-routing";
+
+  import products, { randomStore } from "../stores/defaultProducts";
+  import cart, { addToCart } from "../stores/cart";
+
   import Loading from "../components/Loading.svelte";
   import Featured from "../components/Products/Featured.svelte";
 
-  import { link } from "svelte-routing";
-
   $: product = $products.find(item => item.id === parseInt(id));
 
+  $: isInTheCart = id => $cart.some(item => item.id === id);
+  
 </script>
 
 <style>
@@ -28,7 +32,9 @@
     margin-right: 4rem;
   }
 
-  h1, h2, p {
+  h1,
+  h2,
+  p {
     margin-bottom: 1.5rem;
   }
 
@@ -37,9 +43,9 @@
   }
 
   @media (max-width: 1200px) {
-   .product-img img {
-     width: 450px;
-   }
+    .product-img img {
+      width: 450px;
+    }
   }
 
   @media (max-width: 900px) {
@@ -70,13 +76,17 @@
         <h1>{product.title}</h1>
         <h2>{product.price}</h2>
         <p>{product.description}</p>
-        <button
-          class="button"
-          on:click={() => {
-            console.log('add to list');
-          }}>
-          Add to List
-        </button>
+        {#if isInTheCart(product.id)}
+          <h3>🐱 Already in your cart!</h3>
+        {:else}
+          <button
+            class="button"
+            on:click={() => {
+              addToCart(product);
+            }}>
+            Add to List
+          </button>
+        {/if}
       </article>
     </div>
   </section>

@@ -35,7 +35,7 @@
   button {
     background: transparent;
     font-size: 3rem;
-    color: red;
+    color: var(--red);
     border: none;
     outline: none;
   }
@@ -53,12 +53,13 @@
   }
 
   .cart-total {
-    font-family: 'Dokdo', cursive;
+    font-family: "Dokdo", cursive;
     font-size: 2rem;
     color: var(--blue);
   }
 
   .cart-total__num {
+    display: inline-block;
     color: var(--yellow);
   }
 
@@ -66,11 +67,16 @@
     color: var(--yellow);
   }
 
+  .fish-treats {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
   @media (max-width: 1500px) {
     .cart {
       width: 70vw;
     }
-  } 
+  }
 
   @media (max-width: 900px) {
     .cart {
@@ -102,9 +108,11 @@
 
     <div class="cart-footer">
       <div class="cart-total">
-          Total:
-          <span class="cart-total__num" >{$cartTotal}</span>
-          fish treats
+        Total:
+        <span class="fish-treats">
+          <img src="/assets/images/fish.svg" alt="fish treats" />
+        </span>
+        <span class="cart-total__num">{$cartTotal}</span>
       </div>
       {#if user}
         <a

@@ -1,11 +1,12 @@
 <style>
   .hero {
-    background: url("../assets/images/hero.jpg") center/cover no-repeat;
+    background: url("../assets/images/hero.jpg") center/contain no-repeat;
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    margin-top: -100px;
   }
 
   .banner {
@@ -30,11 +31,12 @@
   }
 
   @media (max-width: 600px) {
+
     .hero {
-      height: 100vh;
+      background-size: cover;
     }
     .banner {
-      margin-left: 1rem;
+      margin-left: 2rem;
     }
 
     h2 {

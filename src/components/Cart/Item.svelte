@@ -27,6 +27,11 @@
     justify-content: center;
   }
 
+  .fish-treats {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
   .button {
       background-color: var(--red);
       border: none;
@@ -48,7 +53,7 @@
   </div>
   <div class="cart-item__info">
     <h2>{title}</h2>
-    <h3>{price} fish treats</h3>
+    <h3><span class="fish-treats"><img src="/assets/images/fish.svg" alt="fish treats" /></span>{price}</h3>
     <button
       class="button"
       on:click={() => {
