@@ -84,7 +84,7 @@
     }
 
     p a {
-      display: block;
+      display: inline-block;
       margin-top: 1rem;
       text-align: center;
     }
@@ -127,7 +127,7 @@
       {:else}
         <div>
           <p>
-            In order to checkout you need to
+            In order to checkout please
             <a
               href="/login"
               use:link

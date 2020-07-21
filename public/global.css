@@ -130,7 +130,7 @@ a:active{
 /*button*/
 .button {
     color: white;
-    font-size: 1.2rem;
+    font-size: 1rem;
     background-color: var(--blue);
     border: 1px solid var(--blue);
     border-radius: 20px 40px;

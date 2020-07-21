@@ -4,7 +4,7 @@
 
   import { link } from "svelte-routing";
 
-  import products, { randomStore } from "../stores/defaultProducts";
+  import products, { randomStore } from "../stores/products";
   import cart, { addToCart } from "../stores/cart";
 
   import Loading from "../components/Loading.svelte";
@@ -13,15 +13,14 @@
   $: product = $products.find(item => item.id === parseInt(id));
 
   $: isInTheCart = id => $cart.some(item => item.id === id);
-  
 </script>
 
 <style>
   .product-container {
     max-width: 1200px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
     margin: 4rem auto;
     padding: 1rem;
   }
@@ -40,6 +39,10 @@
 
   p {
     color: var(--yellow);
+  }
+  .fish-treats {
+    display: inline-block;
+    vertical-align: middle;
   }
 
   @media (max-width: 1200px) {
@@ -74,7 +77,12 @@
       </article>
       <article>
         <h1>{product.title}</h1>
-        <h2>{product.price}</h2>
+        <h2>
+          <span class="fish-treats">
+            <img src="/assets/images/fish.svg" alt="fish treats" />
+          </span>
+          {product.price}
+        </h2>
         <p>{product.description}</p>
         {#if isInTheCart(product.id)}
           <h3>🐱 Already in your cart!</h3>

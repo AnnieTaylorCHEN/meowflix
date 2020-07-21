@@ -1,7 +1,7 @@
 <script>
   import { fade } from "svelte/transition";
   export let title = "";
-  import products from "../../stores/defaultProducts";
+  import products from "../../stores/products";
   import Product from "./Product.svelte";
   import Loading from "../Loading.svelte";
 </script>

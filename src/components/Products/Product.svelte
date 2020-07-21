@@ -5,9 +5,27 @@
 </script>
 
 <style>
- .fish-treats {
+  .product-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+
+  .product-title,
+  .product-price {
+    font-size: 1.5rem;
+  }
+  .fish-treats {
     display: inline-block;
     vertical-align: middle;
+  }
+
+  @media (max-width: 900px) {
+    .product-title,
+    .product-price {
+      font-size: 1rem;
+    }
   }
 </style>
 
