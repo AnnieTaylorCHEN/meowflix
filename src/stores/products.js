@@ -1,8 +1,8 @@
 import { writable, derived } from 'svelte/store';
 
-import getProducts from '../../meowflix-server/getProducts';
+import getProducts from '../server/getProducts';
 
-import url from "../../meowflix-server/URL";
+import url from "../server/URL";
 
 const flattenProducts = (data) => {
 	return data.map((item) => {

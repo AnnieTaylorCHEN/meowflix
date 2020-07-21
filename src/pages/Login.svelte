@@ -2,14 +2,29 @@
   export let location;
   let email = "";
   let password = "";
-  let username = "Meowlo Member";
+  let username = "";
   let isMember = false;
   $: isEmpty = !email || !password || !username;
 
-  const toggleMember = () => {};
+  import loginUser from "../server/loginUser";
+  import registerUser from "../server/registerUser";
+
+  const toggleMember = () => {
+    isMember = !isMember;
+    if (!isMember) {
+      username = "";
+    } else {
+      username = "Meowlo Member";
+    }
+  };
 
   const handleSubmit = async () => {
-    console.log("submit");
+    let user;
+    if (isMember) {
+      user = await loginUser({ email, password });
+    } else {
+      user = await registerUser({ username, email, password });
+    }
   };
 </script>
 
@@ -78,10 +93,10 @@
       font-size: 1rem;
       width: 50px;
     }
-    
+
     input {
-        width: 50vw;
-        font-size: 1rem;
+      width: 50vw;
+      font-size: 1rem;
     }
   }
 </style>

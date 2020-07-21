@@ -1,8 +1,23 @@
-import { writable } from "svelte/store";
+import { writable } from 'svelte/store';
 
-const user = writable({ 
-    username: null,
-    jwt: null,
-});
+const getLocalStorageUser = () => {
+	return localStorage.getItem('meowflixuser')
+		? JSON.parse(localStorage.getItem('meowflixuser'))
+		: { username: null, jwt: null };
+};
 
-export default user;
+export const setLocalStorageUser = (user)=> {
+    localStorage.setItem('meowflixuser', JSON.stringify(user));
+}
+
+const userStore = writable(getLocalStorageUser());
+
+export const setUser = (user) => {
+    userStore.set(user);
+}
+
+export const logoutUser = () => {
+    localStorage.clear();
+    userStore.set({ username: null, jwt: null })
+}
+export default userStore;
