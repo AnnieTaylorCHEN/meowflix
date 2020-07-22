@@ -45,6 +45,19 @@
       margin-right: 1rem;
     }
   }
+
+  @media (max-width: 600px){
+    .cart-item__info h2 {
+      font-family: 'quicksand', Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      padding: 1rem;
+    }
+
+    .button {
+      padding: 0.5rem;
+      font-size: 0.8rem;
+    }
+  }
 </style>
 
 <div class="cart-item">

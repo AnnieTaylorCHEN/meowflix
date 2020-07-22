@@ -2,12 +2,16 @@
   export let location;
   let email = "";
   let password = "";
-  let username = "";
-  let isMember = false;
-  $: isEmpty = !email || !password || !username;
+  let username = "Meowlo Member";
+  let isMember = true;
+  $: isEmpty = !email || !password || !username || $globalStore.alert;
+
+  import { navigate } from "svelte-routing";
 
   import loginUser from "../server/loginUser";
   import registerUser from "../server/registerUser";
+
+  import globalStore from "../stores/globalStore";
 
   const toggleMember = () => {
     isMember = !isMember;
@@ -19,12 +23,20 @@
   };
 
   const handleSubmit = async () => {
+    globalStore.toggleItem("alert", true, "Loading data, please be patient...");
     let user;
     if (isMember) {
       user = await loginUser({ email, password });
     } else {
       user = await registerUser({ username, email, password });
     }
+
+    if (user) {
+      navigate("/products");
+      globalStore.toggleItem("alert", true, "Welcome to Meowflix!");
+      return;
+    }
+    globalStore.toggleItem("alert", true, "Some error occured! Please try again", true);
   };
 </script>
 
@@ -130,7 +142,7 @@
   </form>
   {#if isMember}
     <p>
-      Want to register?
+      Not a member?
       <button class="button" on:click={toggleMember}>Register</button>
     </p>
   {:else}

@@ -85,7 +85,7 @@
         </h2>
         <p>{product.description}</p>
         {#if isInTheCart(product.id)}
-          <h3>🐱 Already in your cart!</h3>
+          <h3>🐱 Already in your list!</h3>
         {:else}
           <button
             class="button"

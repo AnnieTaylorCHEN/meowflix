@@ -6,7 +6,9 @@
 
   import ItemsList from "./ItemsList.svelte";
 
-  import user from "../../stores/user";
+  import user, { getUsername } from "../../stores/user";
+
+  let username = getUsername();
 </script>
 
 <style>
@@ -32,6 +34,12 @@
     justify-content: center;
   }
 
+  .close-cart {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
   button {
     background: transparent;
     font-size: 3rem;
@@ -52,10 +60,15 @@
     justify-content: space-evenly;
   }
 
-  .cart-total {
+  .cart-total,
+  .username {
     font-family: "Dokdo", cursive;
     font-size: 2rem;
     color: var(--blue);
+  }
+
+  .username span {
+    color: var(--yellow);
   }
 
   .cart-total__num {
@@ -98,6 +111,7 @@
 <div class="cart-container" transition:fly={{ x: 1000 }}>
   <div class="cart" transition:fade={{ delay: 100 }}>
     <button
+    class="close-cart"
       on:click={() => {
         globalStore.toggleItem('cart', false);
       }}>
@@ -107,6 +121,12 @@
     <ItemsList />
 
     <div class="cart-footer">
+      {#if username}
+        <div class="username">
+          <span>{username}</span>
+          's to-watch list
+        </div>
+      {/if}
       <div class="cart-total">
         Total:
         <span class="fish-treats">

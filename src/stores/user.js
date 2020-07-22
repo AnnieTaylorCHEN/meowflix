@@ -6,6 +6,12 @@ const getLocalStorageUser = () => {
 		: { username: null, jwt: null };
 };
 
+export const getUsername = () => {
+    return localStorage.getItem('meowflixuser')
+		? JSON.parse(localStorage.getItem('meowflixuser')).username
+		: null
+}
+
 export const setLocalStorageUser = (user)=> {
     localStorage.setItem('meowflixuser', JSON.stringify(user));
 }

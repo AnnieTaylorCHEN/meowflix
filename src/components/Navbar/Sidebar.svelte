@@ -29,6 +29,12 @@
     justify-content: center;
   }
 
+  .close-sidebar {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
   button {
     background: transparent;
     font-size: 3rem;
@@ -66,6 +72,7 @@
     {/each}
     <LoginLink />
     <button
+    class="close-sidebar"
       on:click={() => {
         globalStore.toggleItem('sidebar', false);
       }}>

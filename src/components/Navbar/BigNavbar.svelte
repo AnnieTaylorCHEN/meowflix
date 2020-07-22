@@ -5,6 +5,10 @@
 
   import CartButton from "../Cart/CartButton.svelte";
   import LoginLink from "../LoginLink.svelte";
+
+  import { getUsername } from "../../stores/user";
+
+  let username = getUsername();
 </script>
 
 <style>
@@ -19,6 +23,7 @@
   .menu-container {
     padding: 1rem;
     display: flex;
+    align-items: center;
     justify-content: space-evenly;
   }
 
@@ -29,6 +34,13 @@
 
   .menu-container > div {
     padding: 0 1rem;
+  }
+
+  .username {
+    padding: 1rem;
+    color: var(--yellow);
+    font-size: 1.2rem;
+    vertical-align: baseline;
   }
 
   h1 {
@@ -55,6 +67,9 @@
   </div>
 
   <div class="menu-container">
+    {#if username }
+      <div class="username">Hi, {username}</div>
+    {/if}
     <LoginLink />
     <CartButton />
   </div>
