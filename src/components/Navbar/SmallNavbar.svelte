@@ -13,6 +13,9 @@
     align-items: center;
     justify-content: space-between;
     background-color: transparent;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 1rem;
   }
 
   .menu-container {

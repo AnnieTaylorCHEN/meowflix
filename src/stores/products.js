@@ -6,7 +6,8 @@ import url from "../server/URL";
 
 const flattenProducts = (data) => {
 	return data.map((item) => {
-		let image = `${url}${item.image[0].url}`;
+		// let image = `${url}${item.image[0].url}`;
+		let image = item.image[0].url;
 		return {
 			...item,
 			image,

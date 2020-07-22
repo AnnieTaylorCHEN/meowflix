@@ -6,13 +6,15 @@
   import CartButton from "../Cart/CartButton.svelte";
   import LoginLink from "../LoginLink.svelte";
 
-  import { getUsername } from "../../stores/user";
+  import { username } from "../../stores/user";
 
-  let username = getUsername();
 </script>
 
 <style>
   nav {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -43,21 +45,26 @@
     vertical-align: baseline;
   }
 
+  .title {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
   h1 {
     font-size: 5rem;
     padding: 1rem;
     text-align: center;
-    margin-bottom: -100px;
   }
 </style>
 
-<div>
-  <a href="/" use:link>
-    <h1>Meowflix</h1>
-  </a>
-</div>
-
 <nav>
+  <div class="title">
+    <a href="/" use:link>
+      <h1>Meowflix</h1>
+    </a>
+  </div>
   <div class="menu-container">
     {#each links as navlink}
       <div>
@@ -67,8 +74,8 @@
   </div>
 
   <div class="menu-container">
-    {#if username }
-      <div class="username">Hi, {username}</div>
+    {#if $username}
+      <div class="username">Hi, {$username}</div>
     {/if}
     <LoginLink />
     <CartButton />

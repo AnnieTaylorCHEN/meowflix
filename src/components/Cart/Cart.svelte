@@ -6,9 +6,8 @@
 
   import ItemsList from "./ItemsList.svelte";
 
-  import user, { getUsername } from "../../stores/user";
+  import user, { username } from "../../stores/user";
 
-  let username = getUsername();
 </script>
 
 <style>
@@ -121,9 +120,9 @@
     <ItemsList />
 
     <div class="cart-footer">
-      {#if username}
+      {#if $username}
         <div class="username">
-          <span>{username}</span>
+          <span>{$username}</span>
           's to-watch list
         </div>
       {/if}

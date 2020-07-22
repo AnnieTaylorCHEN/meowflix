@@ -9,6 +9,7 @@
   import Sidebar from "./components/Navbar/Sidebar.svelte";
   import Cart from "./components/Cart/Cart.svelte";
   import Alert from "./components/Alert.svelte";
+  import Thanks from "./pages/Thanks.svelte";
 
   import { Router, Route, Link } from "svelte-routing";
 
@@ -32,4 +33,5 @@
   <Route path="/checkout" component={Checkout} />
   <Route path="/products" component={Products} />
   <Route path="/products/:id" component={ProductTemplate} />
+  <Route path="/thanks" component={Thanks} />
 </Router>

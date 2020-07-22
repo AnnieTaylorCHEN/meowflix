@@ -16,6 +16,10 @@
   .product-price {
     font-size: 1.5rem;
   }
+
+  .product-price {
+    width: 30%;
+  }
   .fish-treats {
     display: inline-block;
     vertical-align: middle;

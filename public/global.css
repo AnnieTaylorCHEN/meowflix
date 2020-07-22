@@ -153,6 +153,11 @@ a:active{
     background-color: red!important;
 }
 
+.fish-treats {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
 /*footer*/
 
 .footer {
