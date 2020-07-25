@@ -2,12 +2,11 @@ import { writable, derived } from 'svelte/store';
 
 import getProducts from '../server/getProducts';
 
-import url from "../server/URL";
 
 const flattenProducts = (data) => {
 	return data.map((item) => {
 		// let image = `${url}${item.image[0].url}`;
-		let image = item.image[0].url;
+		let image = item.image[0].formats.large.url;
 		return {
 			...item,
 			image,
@@ -31,6 +30,7 @@ const store = writable([], () => {
 
 const setProducts = async () => {
 	let products = await getProducts();
+	
 	if (products) {
 		products = flattenProducts(products);
 		store.set(products);

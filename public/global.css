@@ -110,7 +110,7 @@ p {
 
 /*Hyperlink style*/
 a:link {
-    color: var(--blue);
+    color: white;
     text-decoration: none;
 }
 
@@ -124,12 +124,12 @@ a:hover {
 }
 
 a:active{
-    color: var(--blue);
+    color: var(--yellow);
 }
 
 /*button*/
 .button {
-    color: white;
+    color: white !important;
     font-size: 1rem;
     background-color: var(--blue);
     border: 1px solid var(--blue);
