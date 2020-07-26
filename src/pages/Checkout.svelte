@@ -164,6 +164,10 @@
     padding: 1rem 0rem;
   }
 
+  .testinfo {
+    color: var(--light-blue);
+  }
+
   .button {
     margin-top: 1.5rem;
   }
@@ -206,7 +210,7 @@
         <label for="card-element">
           Checkout with credit card or debit card
         </label>
-        <p>
+        <p class="testinfo">
           Test card number:
           <span class="test-card">4242 4242 4242 4242</span>
           <br />

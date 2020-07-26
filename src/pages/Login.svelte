@@ -86,7 +86,7 @@
   }
 
   .button {
-    margin-top: 1.5rem;
+    margin: 1.5rem 0;
   }
 
   .disabled {
@@ -95,6 +95,10 @@
 
   p {
     color: var(--blue);
+  }
+
+  .testinfo {
+    color: var(--light-blue);
   }
 
   @media (max-width: 600px) {
@@ -139,6 +143,8 @@
     <button class="button" disabled={isEmpty} class:disabled={isEmpty}>
       Yes I'm in!
     </button>
+    <p class="testinfo">Test Email: meow@meowflix.com</p>
+    <p class="testinfo">Test Password: 123456</p>
   </form>
   {#if isMember}
     <p>

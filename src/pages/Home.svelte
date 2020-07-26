@@ -22,4 +22,4 @@
 
 <Watch />
 
-<Featured title="Featured" filteredProducts={featuredStore} />
+<Featured title="Meowflix Originals" filteredProducts={featuredStore} />
