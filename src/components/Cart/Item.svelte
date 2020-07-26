@@ -4,7 +4,7 @@
   export let image;
   export let price;
   export let amount;
-
+  
   import { removeItem } from "../../stores/cart";
 </script>
 

@@ -14,7 +14,7 @@ const cart = writable(getLocalStorageCart());
 
 export const cartTotal = derived(cart, ($cart) => {
 	let total = $cart.reduce((acc, curr) => {
-		return (acc += curr.amount * curr.price);
+		return (acc += curr.price);
 	}, 0);
 	return total;
 });

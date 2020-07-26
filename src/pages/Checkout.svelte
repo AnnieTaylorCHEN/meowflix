@@ -40,7 +40,7 @@
       return;
     }
     if ($cartTotal > 0) {
-      stripe = Stripe("pk_test_IdlFKP8IhcQrBWz2JslGjvF5");
+      stripe = Stripe("pk_test_51H99RVKhyWqU79fpcqp13IoGPMCpDiLqJlIlMTddA6Y4oGgjCjEi0bu0xbwXfDj7PrHGgG9g4XO31NodRo8gbPo200vKDgf1pA");
       elements = stripe.elements();
       card = elements.create("card", { style: style });
       card.mount(cardElement);
