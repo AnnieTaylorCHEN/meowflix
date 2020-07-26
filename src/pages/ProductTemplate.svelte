@@ -18,15 +18,17 @@
 <style>
   .product-container {
     max-width: 1200px;
+    max-height: 50vh;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    margin: 4rem auto;
+    margin: 4rem auto 2rem;
     padding: 1rem;
   }
 
   .product-img img {
-    width: 600px;
+    width: auto;
+    height: 50vh;
     padding: 1rem;
     margin-right: 4rem;
   }
@@ -46,18 +48,27 @@
   }
 
   @media (max-width: 1200px) {
-    .product-img img {
-      width: 450px;
+    .product-container {
+      max-height: 100%;
     }
   }
 
   @media (max-width: 900px) {
+    .product-img img{
+      width: 50vw;
+      height: auto;
+      margin-right: 1rem;
+    }
+  }
+
+  @media (max-width: 600px) {
     .product-container {
       flex-direction: column;
     }
 
     .product-img img {
       width: 100%;
+      height: auto;
       margin-right: 0rem;
     }
   }

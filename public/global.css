@@ -55,6 +55,10 @@ table {
     --red: hsla(10, 86%, 61%, 1);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 img {
     width: 100%;
 }

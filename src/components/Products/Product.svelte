@@ -34,7 +34,7 @@
 </style>
 
 <article class="product">
-  <a href={`/products/${id}`} use:link>
+  <a href={`/products/${id}`} use:link >
     <div class="img-container">
       <img src={image} alt={title} />
     </div>

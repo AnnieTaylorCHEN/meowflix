@@ -10,6 +10,8 @@
   import Cart from "./components/Cart/Cart.svelte";
   import Alert from "./components/Alert.svelte";
   import Thanks from "./pages/Thanks.svelte";
+  import Footer from "./components/Footer.svelte";
+  import NotFound from "./components/NotFound.svelte";
 
   import { Router, Route, Link } from "svelte-routing";
 
@@ -34,4 +36,5 @@
   <Route path="/products" component={Products} />
   <Route path="/products/:id" component={ProductTemplate} />
   <Route path="/thanks" component={Thanks} />
+  <Footer />
 </Router>

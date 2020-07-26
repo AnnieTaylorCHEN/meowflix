@@ -22,4 +22,6 @@
 
 <Watch />
 
-<Featured title="Meowflix Originals" filteredProducts={featuredStore} />
+<div id="featured">
+  <Featured title="Meowflix Originals" filteredProducts={featuredStore} />
+</div>

@@ -1,13 +1,11 @@
 <script>
   import { link } from "svelte-routing";
-
   import { links } from "../../constants/links";
 
   import CartButton from "../Cart/CartButton.svelte";
   import LoginLink from "../LoginLink.svelte";
 
   import { username } from "../../stores/user";
-
 </script>
 
 <style>
@@ -61,7 +59,7 @@
 
 <nav>
   <div class="title">
-    <a href="/" use:link>
+    <a href="/">
       <h1>Meowflix</h1>
     </a>
   </div>
@@ -71,6 +69,7 @@
         <a href={navlink.url} use:link>{navlink.text}</a>
       </div>
     {/each}
+    <a href="/#featured">featured</a>
   </div>
 
   <div class="menu-container">
