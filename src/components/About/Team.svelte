@@ -42,7 +42,7 @@
   }
 </style>
 
-<section class="team-container">
+<section class="team-container" id="team">
   <h2>Meet the Meowflix Team</h2>
   <div class="team-grid">
     {#each team as teammate}

@@ -3,12 +3,13 @@
 
   import Hero from "../components/Hero.svelte";
   import Team from "../components/About/Team.svelte";
+  import Faq from "../components/About/Faq.svelte";
 </script>
 
 <style>
   p {
     color: var(--yellow);
-    max-width: 600px;
+    max-width: 800px;
     line-height: 1.5;
     font-size: 1.5rem;
     margin: 4rem auto;
@@ -39,4 +40,5 @@
     streaming on your demand.
   </p>
   <Team />
+  <Faq />
 </section>

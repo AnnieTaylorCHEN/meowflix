@@ -96,15 +96,15 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 5rem;
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 p {
@@ -114,7 +114,7 @@ p {
 
 /*Hyperlink style*/
 a:link {
-    color: white;
+    color: var(--blue);
     text-decoration: none;
 }
 
@@ -129,6 +129,10 @@ a:hover {
 
 a:active{
     color: var(--yellow);
+}
+
+a .button {
+    color: white;
 }
 
 /*button*/
@@ -162,56 +166,16 @@ a:active{
     vertical-align: middle;
   }
 
-/*footer*/
+  @media (max-width: 600px){
+      h1 {
+          font-size: 3rem;
+      }
 
-.footer {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1rem;
-    background-color: var(--light-yellow);
-    padding: 1.5rem;
-    margin-top: 1rem;
-}
+      h2 {
+          font-size: 2rem;
+      }
 
-.footer-logo{
-    width: 150px;
-    height: 150px;
-}
-
-.footer nav{
-    display: flex;
-    flex-direction: column;
-    font-size: 1.3rem;
-    line-height: 1.5;
-    margin-top: 0rem;
-}
-
-.social{
-    display: block;
-}
-
-.social img{
-    width: 50px;
-    height: 50px;
-}
-
-
-.social img:hover{
-    filter: invert(100%) brightness(32%) sepia(1) hue-rotate(174deg) saturate(270%);
-}
-
-.copyright{
-    background-color: var(--blue);
-    color: white;
-}
-
-.author{
-    font-size: 0.8rem;
-}
-
-@media only screen and (min-width: 450px){
-    .footer{
-        grid-template-columns: repeat(3, 1fr) 30%;
-    }
-}
-
+      h3 {
+          font-size: 1.5rem;
+      }
+  }
