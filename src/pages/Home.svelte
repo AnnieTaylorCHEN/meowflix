@@ -14,7 +14,7 @@
   }
 </style>
 
-<Hero>
+<Hero title="The world's best cat-themed streaming service!" url="../assets/images/hero.jpg" >
   <div class="browse-button">
     <a href="/products" class="button" use:link>Browse Now</a>
   </div>

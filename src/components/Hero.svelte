@@ -1,6 +1,11 @@
+<script>
+export let title;
+export let url;
+</script>
+
 <style>
   .hero {
-    background: url("../assets/images/hero.jpg") center/contain no-repeat;
+    display: block;
     width: 100vw;
     height: 80vh;
     display: flex;
@@ -33,21 +38,22 @@
   @media (max-width: 600px) {
 
     .hero {
-      background-size: cover;
+      height: 50vh;
+      margin-top: 0;
     }
     .banner {
       margin-left: 2rem;
     }
 
     h2 {
-      font-size: 1.5rem;
+      font-size: 1rem;
     }
   }
 </style>
 
-<div class="hero">
+<div class="hero" style="background: url({url}) center/contain no-repeat;" >
   <div class="banner">
-    <h2>The world's best cat-themed streaming service!</h2> 
+    <h2>{title}</h2> 
     <slot />
   </div>
 </div>

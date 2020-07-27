@@ -14,7 +14,7 @@
 
   .product-title,
   .product-price {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
 
   .product-price {

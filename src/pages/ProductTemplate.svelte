@@ -8,7 +8,7 @@
   import cart, { addToCart } from "../stores/cart";
 
   import Loading from "../components/Loading.svelte";
-  import Featured from "../components/Products/Featured.svelte";
+  import Recommendation from "../components/Products/Recommendation.svelte";
 
   $: product = $products.find(item => item.id === parseInt(id));
 
@@ -17,20 +17,16 @@
 
 <style>
   .product-container {
-    max-width: 1200px;
-    max-height: 50vh;
-    display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    max-width: 1500px;
+    max-height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
     margin: 4rem auto 2rem;
-    padding: 1rem;
   }
 
   .product-img img {
-    width: auto;
-    height: 50vh;
-    padding: 1rem;
-    margin-right: 4rem;
+    width: 100%;
   }
 
   h1,
@@ -47,30 +43,12 @@
     vertical-align: middle;
   }
 
-  @media (max-width: 1200px) {
+  @media (max-width: 800px) {
     .product-container {
-      max-height: 100%;
-    }
-  }
-
-  @media (max-width: 900px) {
-    .product-img img{
-      width: 50vw;
-      height: auto;
-      margin-right: 1rem;
-    }
-  }
-
-  @media (max-width: 600px) {
-    .product-container {
-      flex-direction: column;
+      grid-template-columns: repeat(1, 1fr);
+      padding: 1rem;
     }
 
-    .product-img img {
-      width: 100%;
-      height: auto;
-      margin-right: 0rem;
-    }
   }
 </style>
 
@@ -87,28 +65,29 @@
         <img src={product.image} alt={product.title} />
       </article>
       <article>
-        <h1>{product.title}</h1>
-        <h2>
-          <span class="fish-treats">
-            <img src="/assets/images/fish.svg" alt="fish treats" />
-          </span>
-          {product.price}
-        </h2>
-        <p>{product.description}</p>
-        {#if isInTheCart(product.id)}
-          <h3>🐱 Already in your list!</h3>
-        {:else}
-          <button
-            class="button"
-            on:click={() => {
-              addToCart(product);
-            }}>
-            Add to List
-          </button>
-        {/if}
+        <div>
+          <h1>{product.title}</h1>
+          <h2>
+            <span class="fish-treats">
+              <img src="/assets/images/fish.svg" alt="fish treats" />
+            </span>
+            {product.price}
+          </h2>
+          <p>{product.description}</p>
+          {#if isInTheCart(product.id)}
+            <h3>🐱 Already in your list!</h3>
+          {:else}
+            <button
+              class="button"
+              on:click={() => {
+                addToCart(product);
+              }}>
+              Add to List
+            </button>
+          {/if}
+        </div>
+        <Recommendation filteredProducts={randomStore} />
       </article>
     </div>
   </section>
 {/if}
-
-<Featured title="You might like" filteredProducts={randomStore} />
