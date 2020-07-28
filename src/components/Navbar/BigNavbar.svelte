@@ -55,6 +55,13 @@
     padding: 1rem;
     text-align: center;
   }
+
+  .orders {
+    display: inline-block;
+    line-height: 1.5;
+    border-bottom: 1px solid var(--yellow);
+    margin-right: 1rem;
+  }
 </style>
 
 <nav>
@@ -75,6 +82,7 @@
   <div class="menu-container">
     {#if $username}
       <div class="username">Hi, {$username}</div>
+      <a href="/orders" class="orders" use:link >your orders</a>
     {/if}
     <LoginLink />
     <CartButton />

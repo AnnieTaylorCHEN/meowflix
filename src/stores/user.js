@@ -1,6 +1,6 @@
 import { writable, derived } from 'svelte/store';
 
-const getLocalStorageUser = () => {
+export const getLocalStorageUser = () => {
 	return localStorage.getItem('meowflixuser')
 		? JSON.parse(localStorage.getItem('meowflixuser'))
 		: { username: null, jwt: null };
@@ -15,6 +15,11 @@ const userStore = writable(getLocalStorageUser());
 export const username = derived(userStore, ($user) => {
 	return $user.username;
 });
+
+export const jwt = derived(userStore, ($user) => {
+	return $user.jwt
+});
+
 
 export const setUser = (user) => {
 	userStore.set(user);

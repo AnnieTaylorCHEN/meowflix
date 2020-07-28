@@ -1,5 +1,5 @@
 <script>
-  import { links } from "../../constants/links";
+  import { sidelinks } from "../../constants/links";
   import { link } from "svelte-routing";
   import globalStore from "../../stores/globalStore";
   import { fly, fade } from "svelte/transition";
@@ -60,7 +60,7 @@
       }}>
       <h1>Meowflix</h1>
     </a>
-    {#each links as sidelink}
+    {#each sidelinks as sidelink}
       <a
         href={sidelink.url}
         use:link

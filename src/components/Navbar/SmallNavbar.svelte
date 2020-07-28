@@ -4,6 +4,7 @@
   import globalStore from "../../stores/globalStore";
 
   import CartButton from "../Cart/CartButton.svelte";
+  
   let openSidebar = globalStore.toggleItem;
 </script>
 

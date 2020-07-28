@@ -1,10 +1,25 @@
 export const links = [
     {
-        text: 'about', 
+        text: 'About', 
         url: '/about'
     },
     {
-        text: 'browse', 
+        text: 'Browse', 
         url: '/products'
+    },
+]
+
+export const sidelinks = [
+    {
+        text: 'About', 
+        url: '/about'
+    },
+    {
+        text: 'Browse all', 
+        url: '/products'
+    },
+    {
+        text: 'Your Orders', 
+        url: '/orders'
     },
 ]

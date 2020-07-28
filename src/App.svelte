@@ -5,6 +5,7 @@
   import Login from "./pages/Login.svelte";
   import Products from "./pages/Products.svelte";
   import ProductTemplate from "./pages/ProductTemplate.svelte";
+  import MyOrders from "./pages/MyOrders.svelte";
   import Navbar from "./components/Navbar/Navbar.svelte";
   import Sidebar from "./components/Navbar/Sidebar.svelte";
   import Cart from "./components/Cart/Cart.svelte";
@@ -35,6 +36,8 @@
   <Route path="/checkout" component={Checkout} />
   <Route path="/products" component={Products} />
   <Route path="/products/:id" component={ProductTemplate} />
+  <Route path="/orders" component={MyOrders} />
   <Route path="/thanks" component={Thanks} />
+  <Route component={NotFound} />
   <Footer />
 </Router>

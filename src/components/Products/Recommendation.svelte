@@ -2,6 +2,13 @@
   export let filteredProducts = [];
   import Product from "./Product.svelte";
   import Loading from "../Loading.svelte";
+
+  const scrollToTop = () => {
+    window.scrollTo ({
+      top: 0,
+      behavior: 'smooth'
+    })
+  };
 </script>
 
 <style>
@@ -35,7 +42,9 @@
     <h3>You might like</h3>
     <div class="movies-grid">
       {#each $filteredProducts as product (product.id)}
+      <div on:click={scrollToTop}>
         <Product {product} />
+        </div>
       {/each}
     </div>
   {/if}

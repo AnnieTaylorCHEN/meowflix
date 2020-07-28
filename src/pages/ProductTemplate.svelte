@@ -47,6 +47,7 @@
     .product-container {
       grid-template-columns: repeat(1, 1fr);
       padding: 1rem;
+      max-height: initial;
     }
 
   }
@@ -81,9 +82,14 @@
               class="button"
               on:click={() => {
                 addToCart(product);
-              }}>
+              }}> 
+              <span class="fish-treats">
+              <img src="/assets/images/liked.svg" alt="add to list" />
+            </span>
               Add to List
             </button>
+           >
+
           {/if}
         </div>
         <Recommendation filteredProducts={randomStore} />

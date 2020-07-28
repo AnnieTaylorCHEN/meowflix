@@ -3,8 +3,7 @@ import { writable, derived } from 'svelte/store';
 import getProducts from '../server/getProducts';
 
 
-const flattenProducts = (data) => {
-	
+const flattenProducts = (data) => {	
 	return data.map((item) => {
 		// let image = `${url}${item.image[0].url}`;
 		let image = item.image[0].url;

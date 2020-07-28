@@ -20,6 +20,10 @@
     margin-bottom: 1rem;
   }
 
+  video {
+    width: 100%;
+  }
+
   @media (max-width: 600px) {
     .faq {
       padding: 2rem 1rem;
@@ -45,10 +49,9 @@
   </div>
   <h3>I don't believe you, you can't type with your paws!</h3>
   <p>
-    Actually we have our own programming language, called PawScript. We use that
+    Actually we have our own programming language called PawScript. We use that
     with our special keyboard. We also built our own compiler called PawSweet
-    which compiles PawScript to Svelte, which is the human-friendly javascript
-    compiler. We suggest that you try it too, it's really cool!
+    which compiles PawScript to <a href="https://svelte.dev/">Svelte</a>, which is a human-friendly Javascript compiler. We suggest that you try it too, it's really cool!
   </p>
   <div class="img-container">
     <img
@@ -76,7 +79,7 @@
     <br />
     United States of Cats
     <br />
-    we'd be happy to have a cup of beverage of your choice with you! 🐱 see ya!
+    We'd be happy to have a cup of beverage of your choice with you! 🐱 See ya!
   </p>
   <div>
     <video autoplay muted loop controls>
