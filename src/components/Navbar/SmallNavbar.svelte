@@ -4,8 +4,17 @@
   import globalStore from "../../stores/globalStore";
 
   import CartButton from "../Cart/CartButton.svelte";
-  
+
   let openSidebar = globalStore.toggleItem;
+
+  let changeBgColor = false;
+  let scrollOver;
+
+  $: if (scrollOver > 100) {
+    changeBgColor = true;
+  } else {
+    changeBgColor = false;
+  }
 </script>
 
 <style>
@@ -16,7 +25,13 @@
     background-color: transparent;
     position: sticky;
     position: -webkit-sticky;
-    top: 1rem;
+    top: 0;
+    padding-top: 1rem;
+    z-index: 10;
+  }
+
+  .navbg {
+    background-color: hsla(0, 0%, 0%, 0.7);
   }
 
   .menu-container {
@@ -40,7 +55,9 @@
   }
 </style>
 
-<nav>
+<svelte:window bind:scrollY={scrollOver} />
+
+<nav class:navbg={changeBgColor}>
   <a href="/" use:link>
     <h1>Meowflix</h1>
   </a>

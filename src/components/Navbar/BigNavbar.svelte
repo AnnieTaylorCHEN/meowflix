@@ -8,6 +8,15 @@
   import { username } from "../../stores/user";
 
   import { scrollToTop } from "../../utils/utils";
+
+  let changeBgColor = false;
+  let scrollOver;
+
+  $: if (scrollOver > 150) {
+    changeBgColor = true;
+  } else {
+    changeBgColor = false;
+  }
 </script>
 
 <style>
@@ -20,6 +29,11 @@
     justify-content: space-between;
     background-color: transparent;
     width: 100%;
+    z-index: 10;
+  }
+
+  .navbg {
+    background-color: hsla(0, 0%, 0%, 0.7);
   }
 
   .menu-container {
@@ -66,7 +80,9 @@
   }
 </style>
 
-<nav>
+<svelte:window bind:scrollY={scrollOver} />
+
+<nav class:navbg={changeBgColor}>
   <div class="title">
     <a href="/">
       <h1>Meowflix</h1>
@@ -84,7 +100,7 @@
   <div class="menu-container">
     {#if $username}
       <div class="username">Hi, {$username}</div>
-      <a href="/orders" class="orders" >your orders</a>
+      <a href="/orders" class="orders">your orders</a>
     {/if}
     <LoginLink />
     <CartButton />
