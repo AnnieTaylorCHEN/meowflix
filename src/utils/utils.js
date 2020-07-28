@@ -3,5 +3,5 @@ export const scrollToTop = () => {
       top: 0,
       behavior: 'smooth'
     })
-    console.log('scrolled')
+    // console.log('scrolled')
   };
