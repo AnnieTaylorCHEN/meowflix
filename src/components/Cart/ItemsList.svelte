@@ -1,5 +1,6 @@
 <script>
   import { afterUpdate } from "svelte";
+  import { link } from "svelte-routing"
   import { fly } from "svelte/transition";
   import { flip } from "svelte/animate";
 
@@ -36,6 +37,11 @@
     width: 50%;
   }
 
+  .button {
+    display:inline-block;
+    margin-top: 1rem;
+  }
+
   @media (max-width: 1500px) {
     .cart-items {
       width: 60vw;
@@ -45,6 +51,10 @@
   @media (max-width: 900px) {
     .cart-items {
       width: 80vw;
+    }
+
+    img {
+      width: 100%;
     }
   }
 </style>
@@ -62,7 +72,8 @@
       <img
         src="/assets/images/empty-cart.png"
         alt="sad grumpy cat when cart is empty" />
-      <h3>Your cart is currently empty!</h3>
+      <h3>Your cart is empty!</h3>
+      <a href="/products" use:link class="button">add some stuff</a>
     {/each}
   </article>
 

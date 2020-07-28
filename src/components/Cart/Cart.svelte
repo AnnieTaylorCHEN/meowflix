@@ -104,6 +104,10 @@
     .cart-footer {
       flex-direction: column;
     }
+
+    .username {
+      font-size: 1.5rem;
+    }
   }
 </style>
 
