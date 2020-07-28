@@ -20,7 +20,7 @@
 
 </style>
 
-{#each $orders as order}
+{#each $orders.reverse() as order}
   <h3>Order no.{order.id} - {new Date(order.created_at).toUTCString()}</h3>
   <div class="order-grid">
   {#each order.items as item}

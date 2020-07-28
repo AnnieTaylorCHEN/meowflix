@@ -2,6 +2,7 @@
   export let id;
   export let location;
 
+  import { onMount } from "svelte";
   import { link } from "svelte-routing";
 
   import products, { randomStore } from "../stores/products";
@@ -10,9 +11,15 @@
   import Loading from "../components/Loading.svelte";
   import Recommendation from "../components/Products/Recommendation.svelte";
 
+  import { scrollToTop } from "../utils/utils";
+
   $: product = $products.find(item => item.id === parseInt(id));
 
   $: isInTheCart = id => $cart.some(item => item.id === id);
+
+  onMount(() => {
+    scrollToTop();
+  });
 </script>
 
 <style>
@@ -49,7 +56,6 @@
       padding: 1rem;
       max-height: initial;
     }
-
   }
 </style>
 
@@ -82,14 +88,13 @@
               class="button"
               on:click={() => {
                 addToCart(product);
-              }}> 
+              }}>
               <span class="fish-treats">
-              <img src="/assets/images/liked.svg" alt="add to list" />
-            </span>
+                <img src="/assets/images/liked.svg" alt="add to list" />
+              </span>
               Add to List
             </button>
-           >
-
+            >
           {/if}
         </div>
         <Recommendation filteredProducts={randomStore} />

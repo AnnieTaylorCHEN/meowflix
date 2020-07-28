@@ -2,6 +2,7 @@
   export let product;
   const { title, image, price, id } = product;
   import { link } from "svelte-routing";
+  import { scrollToTop } from "../../utils/utils";
 </script>
 
 <style>
@@ -33,7 +34,7 @@
   }
 </style>
 
-<article class="product">
+<article class="product" on:click={scrollToTop}>
   <a href={`/products/${id}`} use:link >
     <div class="img-container">
       <img src={image} alt={title} />

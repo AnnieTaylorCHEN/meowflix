@@ -21,13 +21,11 @@
     grid-gap: 2rem;
   }
 
-
   @media (max-width: 900px) {
     .products-grid {
       grid-template-columns: repeat(2, 1fr);
     }
   }
-
 </style>
 
 {#if $filteredProducts.length === 0}

@@ -6,6 +6,8 @@
   import LoginLink from "../LoginLink.svelte";
 
   import { username } from "../../stores/user";
+
+  import { scrollToTop } from "../../utils/utils";
 </script>
 
 <style>
@@ -73,16 +75,16 @@
   <div class="menu-container">
     {#each links as navlink}
       <div>
-        <a href={navlink.url} use:link>{navlink.text}</a>
+        <a href={navlink.url} use:link on:click={scrollToTop}>{navlink.text}</a>
       </div>
     {/each}
-    <a href="/#featured">featured</a>
+    <a href="/#featured">Featured</a>
   </div>
 
   <div class="menu-container">
     {#if $username}
       <div class="username">Hi, {$username}</div>
-      <a href="/orders" class="orders" use:link >your orders</a>
+      <a href="/orders" class="orders" >your orders</a>
     {/if}
     <LoginLink />
     <CartButton />
