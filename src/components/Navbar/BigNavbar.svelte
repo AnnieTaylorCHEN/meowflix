@@ -100,7 +100,7 @@
   <div class="menu-container">
     {#if $username}
       <div class="username">Hi, {$username}</div>
-      <a href="/orders" class="orders">your orders</a>
+      <a href="/orders" class="orders" use:link>your orders</a>
     {/if}
     <LoginLink />
     <CartButton />

@@ -6,6 +6,12 @@
   import { jwt } from "../stores/user";
 
   import Orders from "../components/Orders/Orders.svelte";
+
+  import { scrollToTop } from "../utils/utils";
+
+   onMount(() => {
+    scrollToTop();
+  });
 </script>
 
 <style>
