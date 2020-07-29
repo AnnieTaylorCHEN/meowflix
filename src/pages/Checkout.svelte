@@ -195,10 +195,11 @@
     <form class="checkout-form" on:submit|preventDefault={handleSubmit}>
       <div class="order-total">
         Order Total:
+        {$cartTotal}
         <span class="fish-treats">
           <img src="/assets/images/fish.svg" alt="fish treats" />
         </span>
-        {$cartTotal}
+        
       </div>
       <div class="form-control">
         <label for="name">Your name</label>

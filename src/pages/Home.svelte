@@ -1,11 +1,20 @@
 <script>
   export let location;
 
+  import { onMount } from "svelte";
   import { link } from "svelte-routing";
+
   import Hero from "../components/Hero.svelte";
   import Watch from "../components/Home/Watch.svelte";
   import Featured from "../components/Products/Featured.svelte";
+
   import products, { featuredStore } from "../stores/products";
+
+  import { scrollToTop } from "../utils/utils";
+
+   onMount(() => {
+    scrollToTop();
+  });
 </script>
 
 <style>

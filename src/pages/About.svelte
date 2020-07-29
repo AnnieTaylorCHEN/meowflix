@@ -1,9 +1,17 @@
 <script>
   export let location;
 
+  import { onMount } from "svelte";
+
   import Hero from "../components/Hero.svelte";
   import Team from "../components/About/Team.svelte";
   import Faq from "../components/About/Faq.svelte";
+
+  import { scrollToTop } from "../utils/utils";
+
+   onMount(() => {
+    scrollToTop();
+  });
 </script>
 
 <style>

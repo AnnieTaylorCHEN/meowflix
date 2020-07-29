@@ -75,10 +75,11 @@
         <div>
           <h1>{product.title}</h1>
           <h2>
+          {product.price}
             <span class="fish-treats">
               <img src="/assets/images/fish.svg" alt="fish treats" />
             </span>
-            {product.price}
+            
           </h2>
           <p>{product.description}</p>
           {#if isInTheCart(product.id)}

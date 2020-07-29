@@ -26,7 +26,6 @@
     position: sticky;
     position: -webkit-sticky;
     top: 0;
-    padding-top: 1rem;
     z-index: 10;
   }
 
@@ -35,7 +34,7 @@
   }
 
   .menu-container {
-    padding: 1rem;
+    padding: 0.5rem;
     display: flex;
     justify-content: space-evenly;
   }
@@ -45,7 +44,7 @@
   }
 
   h1 {
-    padding: 1rem;
+    padding-left: 0.5rem;
   }
 
   @media (max-width: 600px) {

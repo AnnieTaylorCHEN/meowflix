@@ -50,7 +50,7 @@
     .cart-item__info h2 {
       font-family: 'quicksand', Arial, Helvetica, sans-serif;
       font-size: 1rem;
-      padding: 1rem;
+      padding: 1rem 0rem;
     }
 
     .button {
@@ -66,7 +66,7 @@
   </div>
   <div class="cart-item__info">
     <h2>{title}</h2>
-    <h3><span class="fish-treats"><img src="/assets/images/fish.svg" alt="fish treats" /></span>{price}</h3>
+    <h3>{price}<span class="fish-treats"><img src="/assets/images/fish.svg" alt="fish treats" /></span></h3>
     <button
       class="button"
       on:click={() => {

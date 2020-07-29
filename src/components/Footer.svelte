@@ -70,17 +70,17 @@
 <footer>
   <div class="footer-grid">
     <div class="footer-sub-grid">
-      <a href="/about">About</a>
+      <a href="/about" use:link>About</a>
       <a href="/about/#faq">FAQ</a>
-      <a href="/products">Browse All</a>
+      <a href="/products" use:link>Browse All</a>
       <a href="/#featured">Meowflix Originals</a>
       <a href="/about/#team">Careers</a>
     </div>
     <div class="footer-sub-grid">
-      <a href="/">Help Center</a>
-      <a href="/">Investor Relations</a>
-      <a href="/">Terms of Use</a>
-      <a href="/">Privacy Policy</a>
+      <a href="/" use:link>Help Center</a>
+      <a href="/" use:link>Investor Relations</a>
+      <a href="/" use:link>Terms of Use</a>
+      <a href="/" use:link>Privacy Policy</a>
     </div>
     <div class="footer-sub-grid">
       <p>

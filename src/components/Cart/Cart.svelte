@@ -132,10 +132,10 @@
       {/if}
       <div class="cart-total">
         Total:
+        <span class="cart-total__num">{$cartTotal}</span>
         <span class="fish-treats">
           <img src="/assets/images/fish.svg" alt="fish treats" />
-        </span>
-        <span class="cart-total__num">{$cartTotal}</span>
+        </span>   
       </div>
       {#if $user.jwt}
         <a

@@ -10,7 +10,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 1rem 0rem;
+    width: 100%;
   }
 
   .product-title,
@@ -18,8 +19,8 @@
     font-size: 1.1rem;
   }
 
-  .product-price {
-    width: 30%;
+  .product-title {
+    width: 70%;
   }
   .fish-treats {
     display: inline-block;
@@ -32,6 +33,17 @@
       font-size: 1rem;
     }
   }
+
+  @media (max-width: 400px) {
+    .product-info {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .product-title {
+      width: 100%;
+    }
+  }
 </style>
 
 <article class="product" on:click={scrollToTop}>
@@ -42,10 +54,11 @@
     <div class="product-info">
       <p class="product-title">{title}</p>
       <p class="product-price">
+      {price}
         <span class="fish-treats">
           <img src="/assets/images/fish.svg" alt="fish treats" />
         </span>
-        {price}
+        
       </p>
     </div>
   </a>
