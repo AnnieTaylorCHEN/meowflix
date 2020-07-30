@@ -1,9 +1,11 @@
 # Meowflix - a JAMstack movie streaming site with membership
 
+This repo is for the front-end. The backend is a strapi server.
+
 ![Screenshot of the site](./docs/images/meowflix-screeshot.jpg)
 
 ## Live demo 
-[Petite & Minimal](https://meowflix.annietaylorchen.com/)
+[Meowflix](https://meowflix.annietaylorchen.com/)
 
 ## Tech and Micro-services used
 - Svelte 
