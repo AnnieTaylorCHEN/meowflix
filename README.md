@@ -1,3 +1,18 @@
+# Meowflix - a JAMstack movie streaming site with membership
+
+![Screenshot of the site](./docs/images/meowflix-screeshot.jpg)
+
+## Live demo 
+[Petite & Minimal](https://meowflix.annietaylorchen.com/)
+
+## Tech and Micro-services used
+- Svelte 
+- Strapi
+- Stripe
+- Netlify + Digital Ocean
+
+---
+
 *Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
 
 ---
