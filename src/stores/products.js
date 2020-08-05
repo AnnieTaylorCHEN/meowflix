@@ -6,7 +6,8 @@ import getProducts from '../server/getProducts';
 const flattenProducts = (data) => {	
 	return data.map((item) => {
 		// let image = `${url}${item.image[0].url}`;
-		let image = item.image[0].url;
+		// let image = item.image[0].url; // use this line for Cloudinary hosted images
+		let image = item.imgurl; // use this line for front-end server hosted images
 		return {
 			...item,
 			image,
