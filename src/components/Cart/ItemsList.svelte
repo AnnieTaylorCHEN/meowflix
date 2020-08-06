@@ -5,11 +5,17 @@
   import { flip } from "svelte/animate";
 
   import Item from "./Item.svelte";
+
   import cart, { setLocalStorageCart } from "../../stores/cart";
+  import globalStore from "../../stores/globalStore";
 
   afterUpdate(() => {
     setLocalStorageCart($cart);
   });
+
+  const redirect = () => {
+    globalStore.toggleItem('cart', false);
+  };
 </script>
 
 <style>
@@ -73,7 +79,7 @@
         src="/assets/images/empty-cart.png"
         alt="sad grumpy cat when cart is empty" />
       <h3>Your cart is empty!</h3>
-      <a href="/products" use:link class="button">add some stuff</a>
+      <a href="/products" use:link class="button" on:click={redirect}>add some stuff</a>
     {/each}
   </article>
 
